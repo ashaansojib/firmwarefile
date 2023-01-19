@@ -105,9 +105,22 @@ img{
   }
   .side2{
     text-align: center;
-  }
-
-
+  }.sidebar-items {
+    background-color: #e6e6e6;
+}
+  /* footer header */
+.footer-head-content{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+article {
+  padding: 10px;
+  text-align: center;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.post-info h1 {
+  font-size: 1.5em;
+}
   /* grid area define */
 header#full-header{
     grid-area: header;
@@ -118,13 +131,12 @@ header#full-header{
 }
 main#main{
     grid-area: main;
-    width: calc(100% - 10px);
 }
 aside#aside {
     grid-area: aside;
-    width: 300px;
-    background-color: #e6e6e6;
-    padding: 10px;
+  }
+  #footer-head{
+    grid-area: footerH;
   }
 /* grid areas */
 .content-wrapper{
@@ -136,9 +148,10 @@ aside#aside {
     background-color: rgb(228, 217, 228);
     display: grid;
     grid-template-areas:  
-    "header  header  header  header"
-    "adv  adv  adv  adv"
-    "main  main  main  aside"
+    "header  header  header"
+    "adv  adv  adv"
+    "main  main  aside"
+    "footerH footerH footerH"
     ;
 }
 
@@ -146,39 +159,26 @@ aside#aside {
 @media only screen and (min-width: 769px) and (max-width: 1000px) {
     /* basic mediaquery for mobile */
     .content-wrapper{
-        width: 100%;
-    }
-    .content-wrapper{
-        width: 100%;
+        width: 95%;
         grid-template-areas:  
-        "header"
-        "adv"
-        "main"
-        "aside"
-        ;
-    }
-    .files-items {
-        grid-template-columns: repeat(4, 1fr);
-      }
-      .sidebar-items{
-        display: grid;
-        gap: 30px;
-        grid-template-columns: repeat(3, 1fr);
-      }
-      aside#aside {
-        width: 100%;
-      }
+    "header  header  header"
+    "adv  adv  adv"
+    "main  main  aside"
+    "footerH footerH footerH"
+    ;
+}
 }
 /* mediaquery for tablet device */
 @media only screen and (min-width: 577px) and (max-width: 768px) {
     /* basic mediaquery for mobile */
     .content-wrapper{
-        width: 100%;
+        width: 95%;
         grid-template-areas:  
         "header"
         "adv"
         "main"
         "aside"
+        "footerH"
         ;
     }
     /* header views */
@@ -202,6 +202,9 @@ aside#aside {
       aside#aside {
         width: 100%;
       }
+      .footer-head-content{
+        grid-template-columns: repeat(3, 1fr);
+      }
 }
 /* all mediaquery */
 @media only screen and (max-width: 576px) {
@@ -213,6 +216,7 @@ aside#aside {
         "adv"
         "main"
         "aside"
+        "footerH"
         ;
     }
     /* header views */
@@ -242,7 +246,9 @@ aside#aside {
         width: 95%;
         height: 150px;
       }
-
+      .footer-head-content{
+        grid-template-columns: repeat(1, 1fr);
+      }
 
 
 
